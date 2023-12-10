@@ -13,7 +13,8 @@ class XylophoneApp extends StatelessWidget {
     }
   }
 
-  Widget _buildkey(Color color, int noteNum, String buttonText) {
+  Widget _buildkey(
+      {required Color color, required int noteNum, String? buttonText}) {
     return Expanded(
       child: Container(
         color: color,
@@ -21,7 +22,7 @@ class XylophoneApp extends StatelessWidget {
           onPressed: () {
             _playNote(noteNum);
           },
-          child: Text(buttonText),
+          child: Text(buttonText!),
         ),
       ),
     );
@@ -37,14 +38,14 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _buildkey(Colors.red, 1, ''),
-              _buildkey(Colors.orange, 2, ''),
-              _buildkey(Colors.yellow, 3, ''),
-              _buildkey(Colors.green, 4, ''),
-              _buildkey(Colors.teal, 5, ''),
-              _buildkey(Colors.blue, 6, ''),
-              _buildkey(Colors.purple, 7, ''),
-              _buildkey(Colors.pink, 8, ''),
+              _buildkey(color: Colors.red, noteNum: 1, buttonText: ''),
+              _buildkey(color: Colors.orange, noteNum: 2, buttonText: ''),
+              _buildkey(color: Colors.yellow, noteNum: 3, buttonText: ''),
+              _buildkey(color: Colors.green, noteNum: 4, buttonText: ''),
+              _buildkey(color: Colors.teal, noteNum: 5, buttonText: ''),
+              _buildkey(color: Colors.blue, noteNum: 6, buttonText: ''),
+              _buildkey(color: Colors.purple, noteNum: 7, buttonText: ''),
+              _buildkey(color: Colors.red, noteNum: 8, buttonText: ''),
             ],
           ),
         ),
